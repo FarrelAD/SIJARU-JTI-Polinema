@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2024 at 01:55 AM
+-- Generation Time: Jun 26, 2024 at 07:32 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -120,6 +120,17 @@ CREATE TABLE `favorit_list` (
   `nama_list` varchar(100) DEFAULT NULL,
   `kode_peminjam` char(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `favorit_list`
+--
+
+INSERT INTO `favorit_list` (`kode_list`, `nama_list`, `kode_peminjam`) VALUES
+('26235623', 'Ruang OKE!', '2341720210'),
+('28734713', 'Ruang rapat impian', '2341720018'),
+('83729823', 'Ruang seminar favorit', '2341720080'),
+('847326375', 'Ruang rapat harian HMTI Polinema', '2341720250'),
+('8732237623', 'Ruang lomba JTI Intercomp 2024', '2341720132');
 
 -- --------------------------------------------------------
 
@@ -281,6 +292,18 @@ CREATE TABLE `matakuliah` (
   `nama_matakuliah` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `matakuliah`
+--
+
+INSERT INTO `matakuliah` (`kode_matakuliah`, `nama_matakuliah`) VALUES
+('2372736', 'Aljabar Linier'),
+('2763634', 'Bahasa Indonesia'),
+('3476364', 'Praktikum Dasar Pemrograman'),
+('3746464', 'Agama'),
+('723672', 'Jaringan Komputer'),
+('9812834', 'Basis Data Dasar');
+
 -- --------------------------------------------------------
 
 --
@@ -355,6 +378,17 @@ CREATE TABLE `permintaan_fasilitas` (
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `permintaan_fasilitas`
+--
+
+INSERT INTO `permintaan_fasilitas` (`kode_formulir`, `kode_fasilitas`, `jumlah`) VALUES
+('01291212', '0120212', 10),
+('01291237', '0129121', 2),
+('01291256', '0120212', 5),
+('01291256', '3487430', 3),
+('012956712', '0348238', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -417,6 +451,17 @@ CREATE TABLE `ruangan_yang_dipinjam` (
   `kode_ruang` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `ruangan_yang_dipinjam`
+--
+
+INSERT INTO `ruangan_yang_dipinjam` (`kode_formulir`, `kode_ruang`) VALUES
+('01291212', 'RT1'),
+('01291212', 'RT2'),
+('01291256', 'LIG1'),
+('01291256', 'LIG2'),
+('012956712', 'LAI1');
+
 -- --------------------------------------------------------
 
 --
@@ -428,6 +473,17 @@ CREATE TABLE `ruang_disimpan` (
   `kode_list` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `ruang_disimpan`
+--
+
+INSERT INTO `ruang_disimpan` (`kode_ruang`, `kode_list`) VALUES
+('LAI1', '26235623'),
+('LIG1', '26235623'),
+('LIG2', '26235623'),
+('RT1', '26235623'),
+('RT2', '847326375');
+
 -- --------------------------------------------------------
 
 --
@@ -438,11 +494,22 @@ CREATE TABLE `sanksi` (
   `kode_sanksi` varchar(10) NOT NULL,
   `deskripsi` text NOT NULL,
   `tanggal_dikirim` date NOT NULL,
-  `nominal_denda` decimal(10,2) DEFAULT NULL,
+  `nominal_denda` int(11) DEFAULT NULL,
   `kode_formulir` varchar(10) NOT NULL,
   `kode_notifikasi` varchar(10) NOT NULL,
   `status_sanksi` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sanksi`
+--
+
+INSERT INTO `sanksi` (`kode_sanksi`, `deskripsi`, `tanggal_dikirim`, `nominal_denda`, `kode_formulir`, `kode_notifikasi`, `status_sanksi`) VALUES
+('3475', 'Anda terkena sanksi akibat kerusakan meja pada bagian kaki. Anda cukup membayar denda Rp 150.000 agar status sanksi anda pulih', '2024-06-20', 150000, '01291237', '0852229', 'Belum'),
+('7364', 'Anda terkena sanksi akibat kerusakan komputer pada peminjaman di ruang lab proyek. Anda dikenakan denda sebesar Rp 200.000', '2024-06-12', 500000, '01295456', '0852230', 'Lunas'),
+('8457', 'Anda terkena sanksi dikarenakan merusak fasilitas layar proyektor di ruang teori 1. Anda dikenakan sanksi sebesar Rp 370.000', '2024-05-20', 370000, '01291256', '0852230', 'Lunas'),
+('8745', 'Anda terkena sanksi akibat kerusakan pada fasilitas kursi lipat di ruang teori 2. Anda dikenakan denda dengan nominal 100000. Silakan temui admin untuk info lebih lanjut', '2024-06-10', 100000, '012956712', '0852226', 'Belum'),
+('92375', 'Anda terkena sanksi akibat perusakan proyektor dengan kondisi cukup berat. Anda dikenakan denda dengan nominal Rp 300.000', '2024-06-27', 300000, '01291212', '0852227', 'Lunas');
 
 -- --------------------------------------------------------
 
@@ -459,6 +526,17 @@ CREATE TABLE `ulasan` (
   `rating` int(11) DEFAULT NULL CHECK (`rating` between 1 and 5)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `ulasan`
+--
+
+INSERT INTO `ulasan` (`kode_ulasan`, `detail_ulasan`, `kode_formulir`, `kode_ruang`, `tanggal`, `rating`) VALUES
+('012956172', 'AC cukup sering bermasalah!', '01291237', 'LIG1', '2024-03-10', 1),
+('125581', 'Keren banget ruangannya!', '01291212', 'LAI1', '2024-03-20', 5),
+('347618', 'Suasana di ruangan ini indah dan nyaman', '01295456', 'RT2', '2024-04-12', 4),
+('348120', 'Ruangannya bagus, AC nya dingin! Top dah', '01291256', 'RT1', '2024-06-20', 5),
+('764812', 'Proyektor sering bermasalah. Lain kali siapkan fasilitas dengan lebih baik!', '01291256', 'RT2', '2024-05-20', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -470,6 +548,24 @@ CREATE TABLE `waktu` (
   `waktu_awal` time NOT NULL,
   `waktu_akhir` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `waktu`
+--
+
+INSERT INTO `waktu` (`kode_sesi`, `waktu_awal`, `waktu_akhir`) VALUES
+('sesi 1', '07:10:00', '07:50:00'),
+('sesi 10', '15:30:00', '16:20:00'),
+('sesi 11', '16:20:00', '17:10:00'),
+('sesi 12', '17:10:00', '18:00:00'),
+('sesi 2', '07:50:00', '08:40:00'),
+('sesi 3', '08:40:00', '09:30:00'),
+('sesi 4', '09:30:00', '10:30:00'),
+('sesi 5', '10:30:00', '11:20:00'),
+('sesi 6', '11:20:00', '12:50:00'),
+('sesi 7', '12:50:00', '13:40:00'),
+('sesi 8', '13:40:00', '14:30:00'),
+('sesi 9', '14:30:00', '15:20:00');
 
 --
 -- Indexes for dumped tables
