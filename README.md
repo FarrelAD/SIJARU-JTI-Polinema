@@ -13,6 +13,7 @@ Proyek **"Sistem Peminjaman Ruangan"** adalah sebuah proyek untuk memudahkan sel
 ---
 ## Software yang digunakan
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Diagrams.net_Logo.svg/2048px-Diagrams.net_Logo.svg.png" style="width:50px; border-radius:10px"></img>
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/XAMPP_Logo.png" style="width:50px; border-radius:10px"></img>
 [![My Skills](https://skillicons.dev/icons?i=windows,figma,vscode,mysql,&theme=light)](https://skillicons.dev)
 
 ---
