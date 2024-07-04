@@ -1,8 +1,6 @@
-# Proyek-SMT-2-BasisData-Sistem-Peminjaman-Ruangan
-
 ![Thumbnail project](img/thumbnail.png)
 
-Proyek **"Sistem Peminjaman Ruangan"** adalah sebuah proyek untuk memudahkan seluruh civitas akademika Politeknik Negeri Malang dalam urusan meminjam ruangan di Jurusan Teknologi Informasi. Pada semester 2 yang kami jalani ini, kami membuat rancangan basis data dari berupa ERD (Entity Relational Diagram) hingga merealisasikannya ke bentuk basis data relasional. Proyek ini sekaligus menjadi proyek kolaborasi antar mata kuliah Basis Data dengan Desain Antarmuka. Berikut adalah rincian anggota tim dari kami yang telah mengerjakan tugas ini dengan sungguh-sungguh:
+Proyek **"SIJARU"** (Sistem Peminjaman Ruangan) adalah sebuah proyek untuk memudahkan seluruh civitas akademika Politeknik Negeri Malang dalam urusan meminjam ruangan di Jurusan Teknologi Informasi. Pada semester 2 yang kami jalani ini, kami membuat rancangan basis data dari berupa ERD (Entity Relational Diagram) hingga merealisasikannya ke bentuk basis data relasional. Proyek ini sekaligus menjadi proyek kolaborasi antar mata kuliah Basis Data dengan Desain Antarmuka. Berikut adalah rincian anggota tim dari kami yang telah mengerjakan tugas ini dengan sungguh-sungguh:
 
 - [Chiko Abilla Basya](https://github.com/Chikoabillabasya)
 - [Dio Andika  Mulia Pratama](https://github.com/TamaDioo)
